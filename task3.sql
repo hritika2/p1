@@ -1,0 +1,14 @@
+USE school;
+SELECT * FROM school.stu;
+SELECT roll_no, f_name, l_name, DATE_FORMAT(DOB, "%e %M %Y") AS stu_dob FROM school.stu;
+SELECT * FROM stu ORDER BY f_name ASC;
+SELECT * FROM stu ORDER BY roll_no DESC;
+SELECT roll_no, f_name, l_name, SUM(maths+science+history)AS TOTAL FROM stu GROUP BY roll_no;
+SELECT MIN(science) AS MINIMUM FROM stu; 
+SELECT MAX(maths) AS MAXIMUM FROM stu;	
+SELECT COUNT(roll_no) AS TOTAL_STU FROM stu;
+SELECT AVG(science) FROM stu;
+SELECT roll_no, f_name, l_name, (maths+science+history)/3 AS AVERAGE FROM stu GROUP BY roll_no;
+SELECT roll_no,f_name, l_name, maths FROM stu HAVING f_name = "Divya";
+SELECT DISTINCT(l_name) FROM stu;
+TRUNCATE TABLE stu;
